@@ -7,7 +7,7 @@ dataBase = mysql.connector.connect(
     user="sergi",
     passwd="1234",
     database="gfg"
-
+a
 )
 def pedirNumeroEntero():
     correcto = False

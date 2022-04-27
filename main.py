@@ -1,26 +1,8 @@
-import mysql.connector
+import funciones
 import os
 
-dataBase = mysql.connector.connect(
-    host="localhost",
-    user="sergi",
-    passwd="1234",
-    database="gfg"
 
-)
-def pedirNumeroEntero():
-    correcto = False
-    num = 0
-    while (not correcto):
-        try:
-            num = int(input("Introduce un numero entero: "))
-            correcto = True
-        except ValueError:
-            print('Error, introduce un numero entero')
-
-    return num
-
-
+funciones.conexionbase()
 salir = False
 opcion = 0
 
@@ -33,10 +15,11 @@ while not salir:
 
     print("Elige una opcion")
 
-    opcion = pedirNumeroEntero()
+    opcion = funciones.pedirNumeroEntero()
 
     if opcion == 1:
-        mycursor = dataBase.cursor()
+        funciones.conexionbase()
+        mycursor = funciones.dataBase.cursor()
 
         mycursor.execute("SELECT * FROM users")
 
@@ -44,18 +27,17 @@ while not salir:
 
         for x in myresult:
             print(x)
+        os.system("clear")
     elif opcion == 2:
         print("Opcion 2")
     elif opcion == 3:
         print("Opcion 3")
     elif opcion == 4:
-
+        os.system("clear")
         salir = True
 
     else:
         print("Introduce un numero entre 1 y 3")
 
-    os.system("clear")
-print("Fin")
 
-dataBase.close()
+print("Fin")

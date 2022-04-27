@@ -55,8 +55,7 @@ while not salir:
     else:
         print("Introduce un numero entre 1 y 3")
 
-os.system("clear")
-
+    os.system("clear")
 print("Fin")
 
 dataBase.close()

@@ -49,10 +49,13 @@ while not salir:
     elif opcion == 3:
         print("Opcion 3")
     elif opcion == 4:
+
         salir = True
-        os.system("clear")
+
     else:
         print("Introduce un numero entre 1 y 3")
+
+os.system("clear")
 
 print("Fin")
 
